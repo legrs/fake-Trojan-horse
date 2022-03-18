@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+            <meta charset="UTF-8">
+        <title>GoogIe ネットワーク診断</title>
+        <style>
+            h1{
+                color: rgb(77, 133, 255);
+            }
+            .div{
+                margin-top: 10vh;
+                text-align:center
+            }
+            .divv{
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                transform: translateY(-50%) translateX(-50%);
+            }
+            .progress3{
+                display: block;
+                width: 64vw;
+                height: 4vh;
+                background: rgb(151, 203, 233);
+                border-radius: 4vh;
+                transition: 0.5s ease-in-out;
+                overflow: hidden;
+            }
+            .progress3::before {
+                content: '';
+                display: inline-block;
+                position: relative;
+                left: -25.6vw; 
+                width: 30vw;
+                height: 4vh;
+                background-color: rgb(0, 117, 255);
+                animation: bar-unknown 2s ease-out infinite;
+                border-radius: 4vh;
+            }
+            @keyframes bar-unknown {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(400%); }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            <h1>問題を検出しています</h1>
+            <h3 id="ptag">ネットワーク設定の問題を検出しています...</h3>
+        </div>
+        <div class="divv">
+            <div class="main">
+                <div class="progress2">
+                    <div class="progress3"></div>
+                </div>
+            </div>
+        </div>
+            <script>
+                setTimeout(function(){
+                    niseinfo = document.getElementById('ptag').innerHTML = '<h3 id="ptag">接続を確認しています...</h3>';
+                    setTimeout(function(){
+                        niseinfo = document.getElementById('ptag').innerHTML = '<h3 id="ptag">ウイルスを検出しています...</h3>';
+                        setTimeout(function(){
+                            location.href = 'aaa.html';
+                        },4000);
+                    },3000);
+                },4000);
+            </script>
+    </body>
+</html>
+
+<!-- 
+    
+ -->
